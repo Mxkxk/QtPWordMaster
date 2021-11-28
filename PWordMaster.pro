@@ -10,10 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    widget.cpp
+    mainwindow.cpp \
+    passwordinputform.cpp \
+    pwordmaster.cpp
 
 HEADERS += \
-    widget.h
+    mainwindow.h \
+    passwordinputform.h \
+    pwordmaster.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
