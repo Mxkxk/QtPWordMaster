@@ -7,6 +7,7 @@
 #include <QLineEdit>
 #include <QCheckBox>
 #include <QTextEdit>
+#include <QPushButton>
 
 class PasswordInputForm : public QWidget
 {
@@ -20,8 +21,20 @@ class PasswordInputForm : public QWidget
 
 public:
     explicit PasswordInputForm(QWidget *parent = nullptr);
+    void setPos(uint pos);
+    QString* toString();
+    void setLines(QString src, QString nm, QString pswrd);
+
+    QPushButton *delete_pass;
+    bool isValid = false;
+    uint position;    
+
+public slots:
+    void validateForm();
+    void showPassword();
 
 signals:
+    void validated(uint pos, QString* str);
 
 };
 
