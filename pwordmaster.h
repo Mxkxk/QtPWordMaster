@@ -9,6 +9,9 @@
 #include <QCheckBox>
 #include <QList>
 #include <passwordinputform.h>
+#include <QFileDialog>
+#include <QTextStream>
+#include <filter.h>
 
 class PWordMaster : public QWidget
 {
@@ -18,13 +21,24 @@ class PWordMaster : public QWidget
     QList<PasswordInputForm*> buttons;
     QPushButton *add, *remove;
     QWidget *add_remove;
+    Filter *filter;
+    PWordMaster *filtered;
 
 public:
     PWordMaster(QWidget *parent = nullptr);
+
 public slots:
     void changeLayout();
-
-
+    void updatePos();
+    void filter_();
+    void filter_(QString fltr);
+    void clearFilter();
+    void export_();
+    void import_();
+    void import_(QStringList str);
+    void import_(QList<PasswordInputForm*> b);
+    void deletePass();
+    void save_();
 };
 
 #endif // PWORDMASTER_H
